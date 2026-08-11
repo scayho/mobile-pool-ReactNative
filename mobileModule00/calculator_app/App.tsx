@@ -63,7 +63,7 @@ export default function App() {
             return;
           }
           const value = evaluate(tmp);
-          if (typeof value !== 'number' || !isFinite(value)) {
+          if (!isFinite(value)) {
             SetResult('Error');
           } else {
             SetResult(String(value));
@@ -113,7 +113,7 @@ export default function App() {
           ref={resultScrollRef}
           horizontal
           style={{ flexGrow: 0 }}
-          showsHorizontalScrollIndicator={false}
+          showsHorizontalScrollIndicator={true}
           contentContainerStyle={{ flexGrow: 1, justifyContent: 'flex-end' }}
           onContentSizeChange={() => {
             resultScrollRef.current?.scrollToEnd({ animated: true });
